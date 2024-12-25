@@ -6,7 +6,7 @@ const config = {
     takenSeats: 3,
     
     // Join link
-    joinLink: 'https://www.canva.com/brand/join?token=gQU3lxutfgQvrOLoMCfvag&brandingVariant=edu&referrer=team-invite',
+    joinLink: 'https://canvapro-three.vercel.app',
     
     // Expiry date (YYYY-MM-DD format)
     expiryDate: '2025-12-17'
