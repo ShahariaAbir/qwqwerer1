@@ -3,7 +3,7 @@
 const config = {
     // Team capacity settings
     totalSeats: 100,
-    takenSeats: 25,
+    takenSeats: 33,
     
     // Join link
     joinLink: 'https://canvapro-three.vercel.app',
