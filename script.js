@@ -6,7 +6,7 @@ const config = {
     takenSeats: 205,
     
     // Join link
-    joinLink: 'https://canvapro-three.vercel.app',
+    joinLink: 'https://is.gd/KrsZXY',
     
     // Expiry date (YYYY-MM-DD format)
     expiryDate: '2024-12-29'
