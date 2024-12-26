@@ -9,7 +9,7 @@ const config = {
     joinLink: 'https://canvapro-three.vercel.app',
     
     // Expiry date (YYYY-MM-DD format)
-    expiryDate: '2025-12-17'
+    expiryDate: '2024-12-29'
 };
 
 // Update all dynamic content
