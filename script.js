@@ -2,8 +2,8 @@
 // Configuration Object - EDIT THESE VALUES AS NEEDED
 const config = {
     // Team capacity settings
-    totalSeats: 250,
-    takenSeats: 205,
+    totalSeats: 500,
+    takenSeats: 333,
     
     // Join link
     joinLink: 'https://is.gd/KrsZXY',
