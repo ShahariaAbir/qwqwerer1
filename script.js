@@ -3,7 +3,7 @@
 const config = {
     // Team capacity settings
     totalSeats: 500,
-    takenSeats: 333,
+    takenSeats: 100,
     
     // Join link
     joinLink: 'https://is.gd/KrsZXY',
