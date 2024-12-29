@@ -6,7 +6,7 @@ const config = {
     takenSeats: 100,
     
     // Join link
-    joinLink: 'https://is.gd/KrsZXY',
+    joinLink: 'https://nanolinks.in/jbaYU',
     
     // Expiry date (YYYY-MM-DD format)
     expiryDate: '2025-1-2'
