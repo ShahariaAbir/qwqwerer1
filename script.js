@@ -9,7 +9,7 @@ const config = {
     joinLink: 'https://is.gd/KrsZXY',
     
     // Expiry date (YYYY-MM-DD format)
-    expiryDate: '2024-12-29'
+    expiryDate: '2025-1-2'
 };
 
 // Update all dynamic content
