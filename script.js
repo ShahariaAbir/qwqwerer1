@@ -3,10 +3,10 @@
 const config = {
     // Team capacity settings
     totalSeats: 500,
-    takenSeats: 499,
+    takenSeats: 10,
     
     // Join link
-    joinLink: 'https://nanolinks.in/jbaYU',
+    joinLink: 'https://nanolinks.in/pe1k7J2R',
     
     // Expiry date (YYYY-MM-DD format)
     expiryDate: '2025-1-2'
