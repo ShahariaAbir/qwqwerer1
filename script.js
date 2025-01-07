@@ -9,7 +9,7 @@ const config = {
     joinLink: 'https://nanolinks.in/pe1k7J2R',
     
     // Expiry date (YYYY-MM-DD format)
-    expiryDate: '2025-1-7'
+    expiryDate: '2025-1-10'
 };
 
 // Update all dynamic content
