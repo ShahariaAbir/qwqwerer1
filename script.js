@@ -6,7 +6,7 @@ const config = {
     takenSeats: 10,
     
     // Join link
-    joinLink: 'https://nanolinks.in/Fc0wGo2',
+    joinLink: 'https://anvanvana12.netlify.app',
     
     // Expiry date (YYYY-MM-DD format)
     expiryDate: '2025-1-16'
