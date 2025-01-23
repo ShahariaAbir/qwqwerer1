@@ -3,13 +3,13 @@
 const config = {
     // Team capacity settings
     totalSeats: 500,
-    takenSeats: 400,
+    takenSeats: 10,
     
     // Join link
-    joinLink: 'https://danvadanva.vercel.app',
+    joinLink: 'https://anvanvanv119014811190148can.netlify.app',
     
     // Expiry date (YYYY-MM-DD format)
-    expiryDate: '2025-1-16'
+    expiryDate: '2025-1-30'
 };
 
 // Update all dynamic content
