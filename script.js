@@ -3,7 +3,7 @@
 const config = {
     // Team capacity settings
     totalSeats: 500,
-    takenSeats: 10,
+    takenSeats: 300,
     
     // Join link
     joinLink: 'https://anvanvanv119014811190148can.netlify.app',
