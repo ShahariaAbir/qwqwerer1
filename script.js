@@ -6,7 +6,7 @@ const config = {
     takenSeats: 499,
     
     // Join link
-    joinLink: 'https://anvanvanv119014811190148can.netlify.app',
+    joinLink: 'https://adrinolinks.in/VrUaX',
     
     // Expiry date (YYYY-MM-DD format)
     expiryDate: '2025-1-30'
