@@ -6,7 +6,7 @@ const config = {
     takenSeats: 10,
     
     // Join link
-    joinLink: 'https://anvanvanv1190148211901481.netlify.app',
+    joinLink: 'https://canvaproteamform.vercel.app',
     
     // Expiry date (YYYY-MM-DD format)
     expiryDate: '2025-2-5'
