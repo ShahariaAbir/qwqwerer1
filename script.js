@@ -3,13 +3,13 @@
 const config = {
     // Team capacity settings
     totalSeats: 500,
-    takenSeats: 500,
+    takenSeats: 10,
     
     // Join link
-    joinLink: 'https://adrinolinks.in/VrUaX',
+    joinLink: 'https://anvanvanv119014821190148can.netlify.app',
     
     // Expiry date (YYYY-MM-DD format)
-    expiryDate: '2025-1-30'
+    expiryDate: '2025-2-5'
 };
 
 // Update all dynamic content
