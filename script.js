@@ -3,13 +3,13 @@
 const config = {
     // Team capacity settings
     totalSeats: 500,
-    takenSeats: 300,
+    takenSeats: 50,
     
     // Join link
     joinLink: 'https://canvaproteamform.vercel.app',
     
     // Expiry date (YYYY-MM-DD format)
-    expiryDate: '2025-2-5'
+    expiryDate: '2025-2-10'
 };
 
 // Update all dynamic content
