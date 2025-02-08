@@ -6,7 +6,7 @@ const config = {
     takenSeats: 300,
     
     // Join link
-    joinLink: 'https://canvaproteamform.vercel.app',
+    joinLink: 'https://arolinks.com/lqxy',
     
     // Expiry date (YYYY-MM-DD format)
     expiryDate: '2025-2-10'
