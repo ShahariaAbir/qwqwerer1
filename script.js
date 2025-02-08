@@ -3,7 +3,7 @@
 const config = {
     // Team capacity settings
     totalSeats: 500,
-    takenSeats: 200,
+    takenSeats: 300,
     
     // Join link
     joinLink: 'https://canvaproteamform.vercel.app',
