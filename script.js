@@ -6,7 +6,7 @@ const config = {
     takenSeats: 300,
     
     // Join link
-    joinLink: 'https://arolinks.com/RiTt',
+    joinLink: 'https://arolinks.com/jpDv1',
     
     // Expiry date (YYYY-MM-DD format)
     expiryDate: '2025-2-10'
