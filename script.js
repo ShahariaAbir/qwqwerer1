@@ -6,7 +6,7 @@ const config = {
     takenSeats: 25,
     
     // Join link
-    joinLink: 'https://arolinks.com/GlBOX',
+    joinLink: 'https://arolinks.com/bUGVS',
     
     // Expiry date (YYYY-MM-DD format)
     expiryDate: '2025-2-15'
