@@ -3,13 +3,13 @@
 const config = {
     // Team capacity settings
     totalSeats: 500,
-    takenSeats: 500,
+    takenSeats: 25,
     
     // Join link
-    joinLink: 'https://arolinks.com/jpDv1',
+    joinLink: 'https://arolinks.com/RitI',
     
     // Expiry date (YYYY-MM-DD format)
-    expiryDate: '2025-2-10'
+    expiryDate: '2025-2-15'
 };
 
 // Update all dynamic content
