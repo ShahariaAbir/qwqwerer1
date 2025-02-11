@@ -6,7 +6,7 @@ const config = {
     takenSeats: 78,
     
     // Join link
-    joinLink: 'https://arolinks.com/tHT',
+    joinLink: 'https://arolinks.com/rfaa2',
     
     // Expiry date (YYYY-MM-DD format)
     expiryDate: '2025-2-15'
