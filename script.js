@@ -3,7 +3,7 @@
 const config = {
     // Team capacity settings
     totalSeats: 500,
-    takenSeats: 78,
+    takenSeats: 253,
     
     // Join link
     joinLink: 'https://arolinks.com/pqmrM',
