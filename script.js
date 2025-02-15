@@ -9,7 +9,7 @@ const config = {
     joinLink: 'https://arolinks.com/uDDHRO',
     
     // Expiry date (YYYY-MM-DD format)
-    expiryDate: '2025-2-15'
+    expiryDate: '2025-2-20'
 };
 
 // Update all dynamic content
