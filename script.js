@@ -3,10 +3,10 @@
 const config = {
     // Team capacity settings
     totalSeats: 500,
-    takenSeats: 306,
+    takenSeats: 101,
     
     // Join link
-    joinLink: 'https://arolinks.com/FKm',
+    joinLink: 'https://arolinks.com/ZGlh',
     
     // Expiry date (YYYY-MM-DD format)
     expiryDate: '2025-2-20'
