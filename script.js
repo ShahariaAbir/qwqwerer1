@@ -6,7 +6,7 @@ const config = {
     takenSeats: 101,
     
     // Join link
-    joinLink: 'https://adrinolinks.in/kIg1o',
+    joinLink: 'https://adrinolinks.in/VOPK9',
     
     // Expiry date (YYYY-MM-DD format)
     expiryDate: '2025-2-20'
