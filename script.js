@@ -18,7 +18,7 @@ function checkBrowser() {
         const config = {
             totalSeats: 500,
             takenSeats: 50,
-            joinLink: 'https://adrinolinks.in/aBlPb',
+            joinLink: 'https://adrinolinks.in/ZViBl',
             expiryDate: '2025-3-1'
         };
 
