@@ -1,85 +1,79 @@
-// script.js
-// Configuration Object - EDIT THESE VALUES AS NEEDED
-const config = {
-    // Team capacity settings
-    totalSeats: 500,
-    takenSeats: 500,
-    
-    // Join link
-    joinLink: 'https://adrinolinks.in/VOPK9',
-    
-    // Expiry date (YYYY-MM-DD format)
-    expiryDate: '2025-2-25'
-};
+function checkBrowser() {
+            const userAgent = navigator.userAgent;
+            const isChrome = /Chrome/.test(userAgent) && !/Edg/.test(userAgent);
+            const isEdge = /Edg/.test(userAgent);
+            
+            const mainContent = document.getElementById('main-content');
+            const browserWarning = document.getElementById('browser-warning');
 
-// Update all dynamic content
-function updateContent() {
-    // Update progress bar
-    const progressPercentage = (config.takenSeats / config.totalSeats) * 100;
-    const progressBar = document.querySelector('.progress-bar');
-    progressBar.style.width = progressPercentage + '%';
+            if (isChrome || isEdge) {
+                mainContent.style.display = 'block';
+                browserWarning.style.display = 'none';
+            } else {
+                mainContent.style.display = 'none';
+                browserWarning.style.display = 'block';
+            }
+        }
 
-    // Update seats info
-    const seatsInfo = document.querySelector('.seats-info');
-    seatsInfo.textContent = `${config.takenSeats} seats taken / ${config.totalSeats} total seats`;
+        const config = {
+            totalSeats: 500,
+            takenSeats: 500,
+            joinLink: 'https://adrinolinks.in/VOPK9',
+            expiryDate: '2025-2-25'
+        };
 
-    // Get elements
-    const joinButton = document.querySelector('.join-button');
-    const seatsFullNotice = document.querySelector('.seats-full-notice');
-    const seatsAvailable = document.querySelector('.seats-available');
-    const date = new Date(config.expiryDate);
-    const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
-    const formattedDate = date.toLocaleDateString('en-US', { 
-        month: 'long', 
-        day: 'numeric', 
-        year: 'numeric' 
-    });
+        function updateContent() {
+            const progressPercentage = (config.takenSeats / config.totalSeats) * 100;
+            const progressBar = document.querySelector('.progress-bar');
+            progressBar.style.width = progressPercentage + '%';
 
-    // Check if seats are full
-    if (config.takenSeats >= config.totalSeats) {
-        // Disable join button
-        joinButton.classList.add('disabled');
-        joinButton.onclick = (e) => e.preventDefault();
-        
-        // Show fully booked notice
-        seatsFullNotice.style.display = 'block';
-        seatsFullNotice.textContent = `All seats are currently booked. Please check back on ${dayName}, ${formattedDate} for new openings.`;
-        
-        // Hide available notice
-        seatsAvailable.style.display = 'none';
-    } else {
-        // Enable join button
-        joinButton.classList.remove('disabled');
-        joinButton.onclick = () => window.location.href = config.joinLink;
-        
-        // Hide fully booked notice
-        seatsFullNotice.style.display = 'none';
-        
-        // Show available notice
-        seatsAvailable.style.display = 'block';
-        const remainingSeats = config.totalSeats - config.takenSeats;
-        seatsAvailable.textContent = `${remainingSeats} seats still available!`;
-    }
+            const seatsInfo = document.querySelector('.seats-info');
+            seatsInfo.textContent = `${config.takenSeats} seats taken / ${config.totalSeats} total seats`;
 
-    // Update expiry date
-    const expireDateElement = document.querySelector('.expire-date');
-    expireDateElement.textContent = `Expires: ${dayName}, ${formattedDate}`;
+            const joinButton = document.querySelector('.join-button');
+            const seatsFullNotice = document.querySelector('.seats-full-notice');
+            const seatsAvailable = document.querySelector('.seats-available');
+            const date = new Date(config.expiryDate);
+            const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
+            const formattedDate = date.toLocaleDateString('en-US', { 
+                month: 'long', 
+                day: 'numeric', 
+                year: 'numeric' 
+            });
 
-    // Update the color of the progress bar based on capacity
-    if (progressPercentage >= 90) {
-        progressBar.style.background = 'linear-gradient(90deg, #ff4444, #ff0000)';
-    } else if (progressPercentage >= 75) {
-        progressBar.style.background = 'linear-gradient(90deg, #ffa500, #ff6600)';
-    } else {
-        progressBar.style.background = 'linear-gradient(90deg, #00c6ff, #0072ff)';
-    }
-}
+            if (config.takenSeats >= config.totalSeats) {
+                joinButton.classList.add('disabled');
+                joinButton.onclick = (e) => e.preventDefault();
+                seatsFullNotice.style.display = 'block';
+                seatsFullNotice.textContent = `All seats are currently booked. Please check back on ${dayName}, ${formattedDate} for new openings.`;
+                seatsAvailable.style.display = 'none';
+            } else {
+                joinButton.classList.remove('disabled');
+                joinButton.onclick = () => window.location.href = config.joinLink;
+                seatsFullNotice.style.display = 'none';
+                seatsAvailable.style.display = 'block';
+                const remainingSeats = config.totalSeats - config.takenSeats;
+                seatsAvailable.textContent = `${remainingSeats} seats still available!`;
+            }
 
-// Initialize when page loads
-document.addEventListener('DOMContentLoaded', updateContent);
+            const expireDateElement = document.querySelector('.expire-date');
+            expireDateElement.textContent = `Expires: ${dayName}, ${formattedDate}`;
 
-// Function to simulate updating seats (for testing)
-function updateSeats(taken) {
-    config.takenSeats = taken;
-    updateContent();
-}
+            if (progressPercentage >= 90) {
+                progressBar.style.background = 'linear-gradient(90deg, #ff4444, #ff0000)';
+            } else if (progressPercentage >= 75) {
+                progressBar.style.background = 'linear-gradient(90deg, #ffa500, #ff6600)';
+            } else {
+                progressBar.style.background = 'linear-gradient(90deg, #00c6ff, #0072ff)';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            checkBrowser();
+            updateContent();
+        });
+
+        function updateSeats(taken) {
+            config.takenSeats = taken;
+            updateContent();
+        }
