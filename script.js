@@ -19,7 +19,7 @@ function checkBrowser() {
             totalSeats: 500,
             takenSeats: 30,
             joinLink: 'https://adrinolinks.in/xTPmO',
-            expiryDate: '2025-3-5'
+            expiryDate: '2025-3-10'
         };
 
         function updateContent() {
