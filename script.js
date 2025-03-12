@@ -17,7 +17,7 @@ function checkBrowser() {
 
         const config = {
             totalSeats: 500,
-            takenSeats: 431,
+            takenSeats: 442,
             joinLink: 'https://adrinolinks.in/XMESl',
             expiryDate: '2025-3-15'
         };
