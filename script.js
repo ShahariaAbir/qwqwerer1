@@ -17,7 +17,7 @@ function checkBrowser() {
 
         const config = {
             totalSeats: 500,
-            takenSeats: 33,
+            takenSeats: 157,
             joinLink: 'https://adrinolinks.in/YQGeO',
             expiryDate: '2025-3-20'
         };
