@@ -1,38 +1,49 @@
 function checkBrowser() {
-            const userAgent = navigator.userAgent;
-            const isChrome = /Chrome/.test(userAgent) && !/Edg/.test(userAgent);
-            const isEdge = /Edg/.test(userAgent);
-            
-            const mainContent = document.getElementById('main-content');
-            const browserWarning = document.getElementById('browser-warning');
+        const userAgent = navigator.userAgent;
+        const isChrome = /Chrome/.test(userAgent) && !/Edg/.test(userAgent);
+        const isEdge = /Edg/.test(userAgent);
+        
+        const mainContent = document.getElementById('main-content');
+        const browserWarning = document.getElementById('browser-warning');
 
-            if (isChrome || isEdge) {
-                mainContent.style.display = 'block';
-                browserWarning.style.display = 'none';
-            } else {
-                mainContent.style.display = 'none';
-                browserWarning.style.display = 'block';
-            }
+        if (isChrome || isEdge) {
+            mainContent.style.display = 'block';
+            browserWarning.style.display = 'none';
+        } else {
+            mainContent.style.display = 'none';
+            browserWarning.style.display = 'block';
         }
+    }
 
-        const config = {
+    const configs = [
+        {
+            id: 1,
             totalSeats: 500,
-            takenSeats: 157,
+            takenSeats: 20,
             joinLink: 'https://adrinolinks.in/A50Wz',
             expiryDate: '2025-3-20'
-        };
+        },
+        {
+            id: 2,
+            totalSeats: 500,
+            takenSeats: 100,
+            joinLink: 'https://adrinolinks.in/BeOTt',
+            expiryDate: '2025-3-20'
+        }
+    ];
 
-        function updateContent() {
+    function updateContent() {
+        configs.forEach(config => {
             const progressPercentage = (config.takenSeats / config.totalSeats) * 100;
-            const progressBar = document.querySelector('.progress-bar');
+            const progressBar = document.getElementById(`progress-bar-${config.id}`);
             progressBar.style.width = progressPercentage + '%';
 
-            const seatsInfo = document.querySelector('.seats-info');
+            const seatsInfo = document.getElementById(`seats-info-${config.id}`);
             seatsInfo.textContent = `${config.takenSeats} seats taken / ${config.totalSeats} total seats`;
 
-            const joinButton = document.querySelector('.join-button');
-            const seatsFullNotice = document.querySelector('.seats-full-notice');
-            const seatsAvailable = document.querySelector('.seats-available');
+            const joinButton = document.getElementById(`join-button-${config.id}`);
+            const seatsFullNotice = document.getElementById(`seats-full-notice-${config.id}`);
+            const seatsAvailable = document.getElementById(`seats-available-${config.id}`);
             const date = new Date(config.expiryDate);
             const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
             const formattedDate = date.toLocaleDateString('en-US', { 
@@ -56,7 +67,7 @@ function checkBrowser() {
                 seatsAvailable.textContent = `${remainingSeats} seats still available!`;
             }
 
-            const expireDateElement = document.querySelector('.expire-date');
+            const expireDateElement = document.getElementById(`expire-date-${config.id}`);
             expireDateElement.textContent = `Expires: ${dayName}, ${formattedDate}`;
 
             if (progressPercentage >= 90) {
@@ -66,14 +77,18 @@ function checkBrowser() {
             } else {
                 progressBar.style.background = 'linear-gradient(90deg, #00c6ff, #0072ff)';
             }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            checkBrowser();
-            updateContent();
         });
+    }
 
-        function updateSeats(taken) {
+    document.addEventListener('DOMContentLoaded', () => {
+        checkBrowser();
+        updateContent();
+    });
+
+    function updateSeats(id, taken) {
+        const config = configs.find(c => c.id === id);
+        if (config) {
             config.takenSeats = taken;
             updateContent();
         }
+    }
