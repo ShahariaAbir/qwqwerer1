@@ -20,14 +20,14 @@ function checkBrowser() {
             id: 1,
             totalSeats: 500,
             takenSeats: 500,
-            joinLink: 'https://adrinolinks.in/lafGv',
+            joinLink: 'https://adrinolinks.in/l',
             expiryDate: '2025-3-20'
         },
         {
             id: 2,
             totalSeats: 500,
             takenSeats: 500,
-            joinLink: 'https://adrinolinks.in/SPzf1',
+            joinLink: 'https://adrinolinks.in/l',
             expiryDate: '2025-3-20'
         }
     ];
