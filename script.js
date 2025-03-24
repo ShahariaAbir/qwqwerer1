@@ -26,7 +26,7 @@ function checkBrowser() {
         {
             id: 2,
             totalSeats: 500,
-            takenSeats: 370,
+            takenSeats: 500,
             joinLink: 'https://adrinolinks.in/Esju2',
             expiryDate: '2025-3-25'
         }
