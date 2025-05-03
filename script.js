@@ -20,7 +20,7 @@ function checkBrowser() {
             id: 1,
             totalSeats: 500,
             takenSeats: 142,
-            joinLink: 'https://nanolinks.in/uvrs9YF',
+            joinLink: 'https://adrinolinks.in/Vqigo',
             expiryDate: '2025-5-10'
         },
         {
