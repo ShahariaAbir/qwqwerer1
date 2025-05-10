@@ -20,8 +20,8 @@ function checkBrowser() {
             id: 1,
             totalSeats: 500,
             takenSeats: 142,
-            joinLink: 'https://adrinolinks.com/Vqigo',
-            expiryDate: '2025-5-10'
+            joinLink: 'https://adrinolinks.in/c7SXN',
+            expiryDate: '2025-5-20'
         },
         {
             id: 2,
