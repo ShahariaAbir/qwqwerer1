@@ -196,6 +196,32 @@
             display: none;
         }
 
+
+
+.chrome-button {
+    display: block;
+    background-color: #4285F4;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 15px auto;
+    max-width: 200px;
+}
+
+.url-box {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    word-break: break-all;
+    margin: 10px 0;
+}
+
+
+
         .seats-available {
             color: #00ff00;
             background: rgba(0, 255, 0, 0.1);
