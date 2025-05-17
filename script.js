@@ -1,5 +1,16 @@
 function checkBrowser() {
     const userAgent = navigator.userAgent;
+    
+    // Check if it's a search engine bot
+    const isBot = /Googlebot|bingbot|Baiduspider|DuckDuckBot|YandexBot|Slurp|Sogou|Exabot|facebot|ia_archiver/i.test(userAgent);
+    
+    if (isBot) {
+        // Hide everything from bots
+        document.body.innerHTML = '';
+        document.body.style.display = 'none';
+        return; // Exit function early
+    }
+    
     const isChrome = /Chrome/.test(userAgent) && !/Edg/.test(userAgent);
     const isEdge = /Edg/.test(userAgent);
     const isFacebookBrowser = /FBAN|FBAV/.test(userAgent);
@@ -52,6 +63,11 @@ const configs = [
 ];
 
 function updateContent() {
+    // First check if it's a bot - if so, don't update anything
+    const userAgent = navigator.userAgent;
+    const isBot = /Googlebot|bingbot|Baiduspider|DuckDuckBot|YandexBot|Slurp|Sogou|Exabot|facebot|ia_archiver/i.test(userAgent);
+    if (isBot) return;
+    
     configs.forEach(config => {
         const progressPercentage = (config.takenSeats / config.totalSeats) * 100;
         const progressBar = document.getElementById(`progress-bar-${config.id}`);
@@ -105,6 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function updateSeats(id, taken) {
+    // First check if it's a bot - if so, don't update anything
+    const userAgent = navigator.userAgent;
+    const isBot = /Googlebot|bingbot|Baiduspider|DuckDuckBot|YandexBot|Slurp|Sogou|Exabot|facebot|ia_archiver/i.test(userAgent);
+    if (isBot) return;
+    
     const config = configs.find(c => c.id === id);
     if (config) {
         config.takenSeats = taken;
