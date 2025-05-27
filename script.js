@@ -50,14 +50,14 @@ const configs = [
         id: 1,
         totalSeats: 500,
         takenSeats: 121,
-        joinLink: 'https://adrinolinks.com/DR4gF',
+        joinLink: 'https://nanolinks.in/FPwQ0',
         expiryDate: '2025-5-30'
     },
     {
         id: 2,
         totalSeats: 500,
         takenSeats: 54,
-        joinLink: 'https://adrinolinks.com/tH50r',
+        joinLink: 'https://nanolinks.in/xuhZegC',
         expiryDate: '2025-5-30'
     }
 ];
