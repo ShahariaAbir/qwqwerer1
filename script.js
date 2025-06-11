@@ -49,11 +49,11 @@ function checkReferrerAndRedirect() {
     const referrer = document.referrer;
     
     // Check if referred from specific URLs and redirect accordingly
-    if (referrer === 'https://is.gd/scclass11') {
+    if (referrer === 'https://re-zynvo-lc.vercel.app') {
         // Redirect to S.C team join link (config id 1)
         window.location.href = 'https://adrinolinks.com/sxF1Mq8T';
         return true; // Indicate that redirect happened
-    } else if (referrer === 'https://is.gd/lcclass11') {
+    } else if (referrer === 'https://re-zynvo-sc.vercel.app') {
         // Redirect to L.C class team join link (config id 2)
         window.location.href = 'https://adrinolinks.com/4psN2';
         return true; // Indicate that redirect happened
