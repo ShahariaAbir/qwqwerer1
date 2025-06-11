@@ -131,4 +131,4 @@ function updateSeats(id, taken) {
         config.takenSeats = taken;
         updateContent();
     }
-} here can you make the website like if the website is reffered from 'https://is.gd/scclass11' then the website will automticly open S.C team join link.and also if website is refferd from 'https://is.gd/lcclass11' then the website will automaticly redirect user to l.C class team join link.now give me whole complete js script  code.and also be careful that other all things should be stay same as before
+} 
