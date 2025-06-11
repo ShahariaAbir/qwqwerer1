@@ -1,16 +1,16 @@
+<script>
 function checkBrowser() {
     const userAgent = navigator.userAgent;
-    
+
     // Check if it's a search engine bot
     const isBot = /Googlebot|bingbot|Baiduspider|DuckDuckBot|YandexBot|Slurp|Sogou|Exabot|facebot|ia_archiver/i.test(userAgent);
     
     if (isBot) {
-        // Hide everything from bots
         document.body.innerHTML = '';
         document.body.style.display = 'none';
-        return; // Exit function early
+        return;
     }
-    
+
     const isChrome = /Chrome/.test(userAgent) && !/Edg/.test(userAgent);
     const isEdge = /Edg/.test(userAgent);
     const isFacebookBrowser = /FBAN|FBAV/.test(userAgent);
@@ -19,15 +19,12 @@ function checkBrowser() {
     const mainContent = document.getElementById('main-content');
     const browserWarning = document.getElementById('browser-warning');
 
-    // Check if it's a mobile device
-    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
     
     if (isChrome || isEdge) {
-        // Continue with Chrome or Edge
         mainContent.style.display = 'block';
         browserWarning.style.display = 'none';
     } else if (isMobile && (isFacebookBrowser || isYoutubeBrowser)) {
-        // For Facebook or YouTube in-app browsers on mobile, show a special redirect option
         mainContent.style.display = 'none';
         browserWarning.style.display = 'block';
         browserWarning.innerHTML = `
@@ -39,27 +36,34 @@ function checkBrowser() {
             <div class="url-box">${window.location.href}</div>
         `;
     } else {
-        // For other browsers, show standard warning
         mainContent.style.display = 'none';
         browserWarning.style.display = 'block';
     }
 }
 
-function checkReferrerAndRedirect() {
-    const referrer = document.referrer;
-    
-    // Check if referred from specific URLs and redirect accordingly
-    if (referrer === 'https://re-zynvo-lc.vercel.app') {
-        // Redirect to S.C team join link (config id 1)
-        window.location.href = 'https://adrinolinks.com/sxF1Mq8T';
-        return true; // Indicate that redirect happened
-    } else if (referrer === 'https://re-zynvo-sc.vercel.app') {
-        // Redirect to L.C class team join link (config id 2)
-        window.location.href = 'https://adrinolinks.com/4psN2';
-        return true; // Indicate that redirect happened
+function normalizeReferrer(url) {
+    try {
+        return new URL(url).origin;
+    } catch (e) {
+        return '';
     }
-    
-    return false; // No redirect happened
+}
+
+function checkReferrerAndRedirect() {
+    const referrer = document.referrer || (window.location.ancestorOrigins && window.location.ancestorOrigins[0]) || '';
+    const normalizedRef = normalizeReferrer(referrer);
+
+    console.log('Referrer:', referrer);
+
+    if (normalizedRef === 'https://re-zynvo-lc.vercel.app') {
+        window.location.href = 'https://adrinolinks.com/sxF1Mq8T';
+        return true;
+    } else if (normalizedRef === 'https://re-zynvo-sc.vercel.app') {
+        window.location.href = 'https://adrinolinks.com/4psN2';
+        return true;
+    }
+
+    return false;
 }
 
 const configs = [
@@ -68,41 +72,36 @@ const configs = [
         totalSeats: 500,
         takenSeats: 124,
         joinLink: 'https://adrinolinks.com/sxF1Mq8T',
-        expiryDate: '2025-6-10'
+        expiryDate: '2025-06-10'
     },
     {
         id: 2,
         totalSeats: 500,
         takenSeats: 101,
         joinLink: 'https://adrinolinks.com/4psN2',
-        expiryDate: '2025-6-10'
+        expiryDate: '2025-06-10'
     }
 ];
 
 function updateContent() {
-    // First check if it's a bot - if so, don't update anything
     const userAgent = navigator.userAgent;
     const isBot = /Googlebot|bingbot|Baiduspider|DuckDuckBot|YandexBot|Slurp|Sogou|Exabot|facebot|ia_archiver/i.test(userAgent);
     if (isBot) return;
-    
+
     configs.forEach(config => {
         const progressPercentage = (config.takenSeats / config.totalSeats) * 100;
         const progressBar = document.getElementById(`progress-bar-${config.id}`);
-        progressBar.style.width = progressPercentage + '%';
-
         const seatsInfo = document.getElementById(`seats-info-${config.id}`);
-        seatsInfo.textContent = `${config.takenSeats} seats taken / ${config.totalSeats} total seats`;
-
         const joinButton = document.getElementById(`join-button-${config.id}`);
         const seatsFullNotice = document.getElementById(`seats-full-notice-${config.id}`);
         const seatsAvailable = document.getElementById(`seats-available-${config.id}`);
+        const expireDateElement = document.getElementById(`expire-date-${config.id}`);
         const date = new Date(config.expiryDate);
         const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
-        const formattedDate = date.toLocaleDateString('en-US', { 
-            month: 'long', 
-            day: 'numeric', 
-            year: 'numeric' 
-        });
+        const formattedDate = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+        progressBar.style.width = `${progressPercentage}%`;
+        seatsInfo.textContent = `${config.takenSeats} seats taken / ${config.totalSeats} total seats`;
 
         if (config.takenSeats >= config.totalSeats) {
             joinButton.classList.add('disabled');
@@ -119,7 +118,6 @@ function updateContent() {
             seatsAvailable.textContent = `${remainingSeats} seats still available!`;
         }
 
-        const expireDateElement = document.getElementById(`expire-date-${config.id}`);
         expireDateElement.textContent = `Expires: ${dayName}, ${formattedDate}`;
 
         if (progressPercentage >= 90) {
@@ -132,26 +130,23 @@ function updateContent() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Check referrer first and redirect if needed
-    const redirected = checkReferrerAndRedirect();
-    
-    // Only proceed with normal functionality if no redirect happened
-    if (!redirected) {
-        checkBrowser();
-        updateContent();
-    }
-});
-
 function updateSeats(id, taken) {
-    // First check if it's a bot - if so, don't update anything
     const userAgent = navigator.userAgent;
     const isBot = /Googlebot|bingbot|Baiduspider|DuckDuckBot|YandexBot|Slurp|Sogou|Exabot|facebot|ia_archiver/i.test(userAgent);
     if (isBot) return;
-    
+
     const config = configs.find(c => c.id === id);
     if (config) {
         config.takenSeats = taken;
         updateContent();
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const redirected = checkReferrerAndRedirect();
+    if (!redirected) {
+        checkBrowser();
+        updateContent();
+    }
+});
+</script>
