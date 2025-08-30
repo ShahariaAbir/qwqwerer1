@@ -56,9 +56,9 @@ const configs = [
     {
         id: 2,
         totalSeats: 500,
-        takenSeats: 500,
-        joinLink: 'https://nanolinks.in/KosUP',
-        expiryDate: '2025-8-30'
+        takenSeats: 200,
+        joinLink: 'https://adrinolinks.com/OL0EnmUI',
+        expiryDate: '2025-9-10'
     }
 ];
 
@@ -132,6 +132,7 @@ function updateSeats(id, taken) {
         updateContent();
     }
 } 
+
 
 
 
