@@ -49,7 +49,7 @@ const configs = [
     {
         id: 1,
         totalSeats: 500,
-        takenSeats: 210,
+        takenSeats: 500,
         joinLink: 'https://adrinolinks.com/BObxE',
         expiryDate: '2025-10-20'
     },
@@ -57,7 +57,7 @@ const configs = [
         id: 2,
         totalSeats: 500,
         takenSeats: 150,
-        joinLink: 'https://adrinolinks.com/fn61I',
+        joinLink: 'https://is.gd/54c4Eq',
         expiryDate: '2025-10-20'
     }
 ];
@@ -132,6 +132,7 @@ function updateSeats(id, taken) {
         updateContent();
     }
 } 
+
 
 
 
